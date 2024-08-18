@@ -1,0 +1,181 @@
+/* Apply a background gradient to the entire page */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #74ebd5, #acb6e5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main container styling */
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Title styling */
+h1, h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    position: relative;
+    overflow: hidden;
+}
+
+h1::after, h2::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    background-color: #ff6b81;
+    transition: width 0.3s ease-in-out;
+}
+
+h1:hover::after, h2:hover::after {
+    width: 100%;
+}
+
+/* Label and input fields styling */
+label {
+    display: block;
+    font-weight: bold;
+    color: #444;
+    margin-top: 15px;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 2px solid #ff6b81;
+    font-size: 1rem;
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #74ebd5;
+    box-shadow: 0 5px 15px rgba(116, 235, 213, 0.4);
+    outline: none;
+}
+
+/* Button styles */
+button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #ff6b81, #74ebd5);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Notes styling */
+.note {
+    background: white;
+    border-left: 5px solid #ff6b81;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.6s ease-out;
+}
+
+/* Animation for notes */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Delete and Edit buttons styling */
+.delete-btn, .edit-btn {
+    padding: 10px;
+    background-color: #ff6b81;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-right: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.delete-btn:hover, .edit-btn:hover {
+    background-color: #ff4757;
+    transform: translateY(-2px);
+}
+
+.delete-btn:active, .edit-btn:active {
+    transform: translateY(0);
+}
+
+/* Edit form styling */
+#editFormContainer {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+    margin: 20px;
+    display: none;
+}
+
+/* Responsive design adjustments */
+@media screen and (max-width: 768px) {
+    .container, #editFormContainer {
+        width: 100%;
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    h1, h2 {
+        font-size: 1.4rem;
+    }
+
+    input, button {
+        font-size: 1rem;
+    }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
